@@ -1,0 +1,30 @@
+.container {
+  border: 1px solid #00000020;
+  border-radius: 0.8rem;
+  margin: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background: linear-gradient(to right, rgb(117, 79, 255), rgb(149, 121, 251));
+}
+
+.card {
+  border: 1px solid #00000020;
+  border-radius: 0.8rem;
+  margin: 5px;
+  background: linear-gradient(to right, rgb(137, 104, 255), rgb(175, 152, 255));
+  padding: 20px;
+  text-align: center;
+}
+
+.cardTitle {
+  margin: 0 auto;
+  color: rgb(241, 241, 241);
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    font-size: 10px;
+    padding: 10px;
+  }
+}
