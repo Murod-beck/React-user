@@ -1,33 +1,34 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useFetch } from "../hooks/useFetch";
 import style from "./style/Card.module.css";
 
 function Card() {
-  const [users, setUser] = useState([]);
   const [url, setUrl] = useState("https://randomuser.me/api/?results=5");
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setUser(data));
-  }, [url]);
-
+  const { data: users } = useFetch(url);
+  const userRefresh = () => {
+    setUrl("https://randomuser.me/api/?results=10");
+  };
   console.log(users);
-
   return (
     <div className={style.container}>
-      {users.results.map((user) => {
-        const { name, email, dob, id, picture } = user;
-        return (
-          <div className={style.card} key={id.value}>
-            <img src={picture.large}></img>
-            <br />
-            <span className={style.cardTitle}>Name: {name.first}</span>
-            <p>Age: {dob.age}</p>
-            <p>Email: {email}</p>
-            <button>Delete</button>
-          </div>
-        );
-      })}
+      <button onClick={userRefresh}>Refref</button>
+      {users &&
+        users.results.map((user) => {
+          const { name, email, dob, picture, location, phone } = user;
+          console.log(dob);
+          return (
+            <div className={style.card} key={dob.date}>
+              <img className={style.imgs} src={picture.large}></img>
+              <br />
+              <h4 className={style.cardTitle}>NAME: {name.first}</h4>
+              <p>AGE: {dob.age}</p>
+              <p>PHONE: {phone}</p>
+              <p>CITY: {location.city}</p>
+              <p>EMAIL: {email}</p>
+              <button>Delete</button>
+            </div>
+          );
+        })}
     </div>
   );
 }

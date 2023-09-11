@@ -22,6 +22,10 @@
   color: rgb(241, 241, 241);
 }
 
+.imgs {
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 600px) {
   .card {
     font-size: 10px;
