@@ -1,21 +1,20 @@
+import style from "./style/Contact.module.css";
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
-import style from "./style/Card.module.css";
 
-function Card() {
+function Contact() {
   const [url, setUrl] = useState("https://randomuser.me/api/?results=5");
-  const { data: users } = useFetch(url);
+  const { data: users, loading } = useFetch(url);
   const userRefresh = () => {
     setUrl("https://randomuser.me/api/?results=10");
   };
-  console.log(users);
   return (
     <div className={style.container}>
+      {loading && <div>Loding...</div>}
       <button onClick={userRefresh}>Refref</button>
       {users &&
         users.results.map((user) => {
           const { name, email, dob, picture, location, phone } = user;
-          console.log(dob);
           return (
             <div className={style.card} key={dob.date}>
               <img className={style.imgs} src={picture.large}></img>
@@ -33,4 +32,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default Contact;
