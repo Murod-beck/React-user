@@ -11,7 +11,7 @@ function Contact() {
   };
   return (
     <>
-      <button onClick={userRefresh}>Refref</button>
+      <button onClick={userRefresh}>Refresh</button>
       <div className={style.container}>
         {loading && <div className={style.loading}>Loding...</div>}
         {users &&

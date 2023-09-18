@@ -8,7 +8,6 @@ function ContactDetail() {
   const { picture, id, location, name, phone, email, gender, dob, registered } =
     state;
 
-  console.log(state);
   return (
     <div className={style.container}>
       <div className={style.cards}>

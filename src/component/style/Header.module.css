@@ -58,3 +58,23 @@ button {
 button:hover {
   border-color: #141637;
 }
+
+.crumbs {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #b491ff;
+}
+.crumbs > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+.crumbs .crumb:after {
+  content: ">";
+  margin-left: 10px;
+}
+.crumbs .crumb:last-child:after {
+  display: none;
+}
+.crumbs .crumb a {
+  color: #2f0856;
+}
