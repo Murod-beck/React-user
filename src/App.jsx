@@ -5,6 +5,8 @@ import Contact from "./component/Contact";
 import RouterLayout from "./component/layout/RouterLayout";
 import AboutLayout from "./component/layout/AboutLayout";
 import AboutDetail from "./component/AboutDetail";
+import ContactDetail from "./component/ContactDetail";
+import ContactLayout from "./component/layout/ContactLayout";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -17,10 +19,13 @@ function App() {
     createRoutesFromElements(
       <Route element={<RouterLayout />}>
         <Route index element={<Home />} />
-        <Route path="contact" element={<Contact />} />
         <Route path="about" element={<AboutLayout />}>
           <Route index element={<About />} />
           <Route path=":id" element={<AboutDetail />} />
+        </Route>
+        <Route path="contact" element={<ContactLayout />}>
+          <Route index element={<Contact />} />
+          <Route path=":id" element={<ContactDetail />} />
         </Route>
       </Route>
     )

@@ -21,13 +21,32 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.loading {
+  font-size: 2rem;
+}
+
 .cardTitle {
   margin: 0 auto;
-  color: rgb(241, 241, 241);
+}
+
+.img {
+  border-radius: 50%;
 }
 
 .imgs {
   border-radius: 50%;
+  margin: 30px;
+}
+h3 {
+  color: rgb(124, 0, 77);
+}
+
+h3 > span {
+  color: rgb(0, 0, 0);
+}
+
+.links {
+  color: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 600px) {
@@ -35,4 +54,11 @@
     font-size: 10px;
     padding: 10px;
   }
+}
+
+/* ContactDetail */
+
+.cards {
+  margin: 5px;
+  padding: 20px;
 }

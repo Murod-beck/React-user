@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-function AboutLayout() {
+function ContactLayout() {
   return (
     <div>
       <Outlet />
@@ -8,4 +8,4 @@ function AboutLayout() {
   );
 }
 
-export default AboutLayout;
+export default ContactLayout;

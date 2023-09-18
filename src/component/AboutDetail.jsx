@@ -1,11 +1,7 @@
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 function AboutDetail() {
   const location = useLocation();
-  const id = useParams();
   const { state } = location;
-
-  console.log(state);
-  console.log(id);
 
   return (
     <div>
